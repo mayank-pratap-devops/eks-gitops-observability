@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net">
+  <diagram name="EKS-Architecture">
+    <mxGraphModel dx="1286" dy="718" grid="1" gridSize="10">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- User -->
+        <mxCell id="2" value="User" style="shape=ellipse;whiteSpace=wrap;html=1;fillColor=#D5E8D4;" vertex="1" parent="1">
+          <mxGeometry x="40" y="100" width="80" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- ALB / Ingress -->
+        <mxCell id="3" value="ALB / Ingress" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;" vertex="1" parent="1">
+          <mxGeometry x="160" y="100" width="120" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- EKS Cluster -->
+        <mxCell id="4" value="EKS Cluster" style="swimlane;childLayout=stackLayout;rounded=1;horizontal=1;resizeLast=0;fillColor=#DAE8FC;" vertex="1" parent="1">
+          <mxGeometry x="320" y="50" width="380" height="300" as="geometry"/>
+        </mxCell>
+
+        <!-- Worker Nodes -->
+        <mxCell id="5" value="Worker Nodes (EC2)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;" vertex="1" parent="4">
+          <mxGeometry x="20" y="50" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- ArgoCD -->
+        <mxCell id="6" value="ArgoCD (GitOps)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="4">
+          <mxGeometry x="200" y="50" width="140" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Helm -->
+        <mxCell id="7" value="Helm Deployer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C9DAF8;" vertex="1" parent="4">
+          <mxGeometry x="200" y="130" width="140" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Microservice -->
+        <mxCell id="8" value="Sample Microservice (NGINX)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D9EAD3;" vertex="1" parent="4">
+          <mxGeometry x="40" y="130" width="140" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Monitoring Stack -->
+        <mxCell id="9" value="Prometheus &amp; Grafana" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F4CCCC;" vertex="1" parent="4">
+          <mxGeometry x="40" y="210" width="300" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- AWS Cloud -->
+        <mxCell id="10" value="AWS Cloud (VPC, Subnets, Security Groups)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE5CD;" vertex="1" parent="1">
+          <mxGeometry x="300" y="380" width="400" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Edges -->
+        <mxCell id="11" edge="1" source="2" target="3" style="endArrow=classic;html=1;strokeWidth=2;" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" edge="1" source="3" target="4" style="endArrow=classic;html=1;strokeWidth=2;" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" edge="1" source="4" target="10" style="endArrow=classic;html=1;strokeWidth=2;dashed=1;" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
